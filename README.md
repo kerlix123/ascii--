@@ -32,3 +32,14 @@ To end program in "AMM" you just write "0" which represents "NULL" in ASCII and 
     Program ended with status code '0'
 
 You can end program inside of repeat block.
+## Math
+"AMM" uses "Python's eval() function for math". To get result of mathematical expression in "AMM" you type "77" which represents "M" in ASCII followed by mathematical expresion
+
+    77 5 + 3
+
+This will print:
+
+    8
+If you mess something up you will get this message:
+
+    Invalid mathematical expression!

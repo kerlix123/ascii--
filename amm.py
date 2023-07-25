@@ -1,5 +1,14 @@
+import ast
+
 vars = {}
 
+def M(getIN):
+    operation = getIN[3:]
+    try:
+        result = eval(operation)
+        print(result)
+    except (SyntaxError, NameError, TypeError, ZeroDivisionError):
+        print("Invalid mathematical expression!")
 def NULL():
     print("Program ended with status code '0'")
     exit()
@@ -54,3 +63,5 @@ while (True):
         R(getIN)
     elif getIN.split(" ")[0] == "86":
         V(getIN)
+    elif getIN.split(" ")[0] == "77":
+        M(getIN)
