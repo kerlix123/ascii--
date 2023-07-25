@@ -1,5 +1,3 @@
-import ast
-
 vars = {}
 
 def M(getIN):
