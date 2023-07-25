@@ -1,4 +1,5 @@
 vars = {}
+loopVARS = {}
 
 def M(getIN):
     operation = getIN[3:]
@@ -21,7 +22,10 @@ def P(getIN):
                 var += getIN[i]
                 i += 1
             i += 1
-            a += vars[var]
+            if var in vars:
+                a += vars[var]
+            elif var in loopVARS:
+                a += str(loopVARS[var])
         else:
             a += getIN[i]
             i += 1
@@ -52,6 +56,36 @@ def V(getIN):
         for i in range(3, len(getIN.split(" "))):
             a += getIN.split(" ")[i] + " "
         vars[getIN.split(" ")[1]] = a[:-1]
+def F(getIN):
+    if getIN.split(" ")[2] == "91":
+        if getIN.split(" ")[1] not in vars:
+            fLIST = []
+            fIN = ""
+            rang = getIN.split(" ")[3].split("..")
+            loopVARS[getIN.split(" ")[1]] = int(rang[0])
+            up = int(rang[0])
+            down = int(rang[1])
+            while fIN.split(" ")[0] != "33":
+                fIN = input("")
+                fLIST.append(fIN)
+            for i in range(up, down):
+                flag = False
+                for j in range(0, len(fLIST)):
+                    cond = fLIST[j].split(" ")[0]
+                    if cond == "80":
+                        P(fLIST[j])
+                    elif cond == "0":
+                        flag = True
+                    elif cond == "86":
+                        V(fLIST[j])
+                    elif cond == "77":
+                        M(fLIST[j])
+                if flag:
+                    NULL()
+                loopVARS[getIN.split(" ")[1]] += 1
+        else:
+            print("Variable is already used!")
+
 while (True):
     getIN = input("")
     #print
@@ -65,3 +99,5 @@ while (True):
         V(getIN)
     elif getIN.split(" ")[0] == "77":
         M(getIN)
+    elif getIN.split(" ")[0] == "70":
+        F(getIN)
