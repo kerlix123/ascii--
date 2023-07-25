@@ -44,6 +44,8 @@ def R(getIN):
                 flag = True
             elif cond == "86":
                 V(rLIST[j])
+            elif cond == "77":
+                M(rLIST[j])
         if flag:
             NULL()
 def V(getIN):
