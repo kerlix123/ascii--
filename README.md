@@ -43,3 +43,19 @@ This will print:
 If you mess something up you will get this message:
 
     Invalid mathematical expression!
+## For loop
+For loop in "AMM" is declared by number "70" which represents "F" in ASCII. After that you write variable that you want to use in loop (this variable can not be used anywhere else) followe bz "91" which represents "[" in ASCII and "in" in other languages like Python and Javascript. After that you type range throgh which you want to loop:
+
+    70 i 91 0..5
+After that you type functions you want to be executed and type "33" to indicate end of for block.
+
+    70 i 91 0..5
+    80 i: <i>
+    33
+This prints the following:
+
+    i: 0
+    i: 1
+    i: 2
+    i: 3
+    i: 4
